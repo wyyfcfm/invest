@@ -1,0 +1,28 @@
+name: Structure Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required research system structure
+        run: |
+          test -f README.md
+          test -d 00_总索引
+          test -d 01_书籍总结
+          test -d 02_多维模型
+          test -d 03_公司分析
+          test -d 04_行业研究
+          test -d 99_输出报告
+          test -f 01_书籍总结/B-001_聪明的投资者.md
+          test -f 01_书籍总结/B-002_安全边际.md
+          test -f 01_书籍总结/B-003_竞争优势.md
+          test -f 01_书籍总结/B-004_竞争战略.md
+          test -f 02_多维模型/K-001_安全边际.md
+          test -f 02_多维模型/K-002_能力圈.md
+          test -f 03_公司分析/_模板/公司分析卡片.md
+

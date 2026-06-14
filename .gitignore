@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+
+# Local research scratch files
+*.tmp
+*.bak
+~$*.xlsx
+
+# Keep raw exports local unless intentionally committed
+sources/raw/*
+!sources/raw/.gitkeep
+
